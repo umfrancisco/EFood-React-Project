@@ -1,6 +1,14 @@
+import Header from "./components/Header"
+import { GlobalCss } from "./styles"
+
 function App() {
   return (
-    <>hello world</>
+    <>
+      <GlobalCss />
+      <div>
+        <Header />
+      </div>
+    </>
   )
 }
 
