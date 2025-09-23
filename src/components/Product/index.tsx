@@ -1,18 +1,23 @@
 import Tag from "../Tag";
-import macarrao from "../../assets/images/macarrao.png";
-import { Card } from "./styles";
+import { Card, Categories, Img, Text, Title } from "./styles";
 
-const Product = () => (
+type Props = {
+    categories: string[],
+    image: string,
+    title: string,
+    desc: string,
+    link: string
+}
+
+const Product = ({ categories, image, title, desc, link }: Props) => (
     <Card>
-        <img src={macarrao} />
-        <h3>La Dolce Vita Trattoria</h3>
-        <p>
-            A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! 
-            Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. 
-            Entrega rápida, pratos bem embalados e sabor inesquecível. 
-            Peça já!
-        </p>
-        <Tag>Saiba mais</Tag>
+        <Img src={image} alt={title} />
+        <Categories>
+            {categories.map(category => <Tag key={category}>{category}</Tag>)}
+        </Categories>
+        <Title>{title}</Title>
+        <Text>{desc}</Text>
+        <Tag>{link}</Tag>
     </Card>
 )
 

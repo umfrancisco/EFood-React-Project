@@ -7,21 +7,14 @@ export const HeaderLogo = styled.header`
     background-color: ${cor.branco};
     margin: 0 auto;
     text-align: center;
-    padding-bottom: 60px;
+    padding-bottom: 40px;
     padding-top: 40px;
+    display: block;
 `
 
-export const HeaderTitle = styled.header`
-    background-image: url(${bannerImg});
-    background-color: ${cor.branco};
-    margin: 0 auto;
-    text-align: center;
-    padding-bottom: 40px;
-    padding-top: 60px;
-    
-    h2 {
-        font-size: 36px;
-    }
+export const Title = styled.h2`
+    font-size: 36px;
+    margin-top: 140px;
 `
 
 export const Logo = styled.img`

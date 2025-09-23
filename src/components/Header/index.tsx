@@ -1,14 +1,12 @@
-import { HeaderLogo, HeaderTitle, Logo } from "./styles";
-import logo from "../../assets/images/logo.png";
+import { HeaderLogo, Logo, Title } from "./styles";
+import logo from "../../assets/images/logo.svg";
 
 const Header = () => (
     <>
         <HeaderLogo>
             <Logo src={logo} alt="efood" />
+            <Title>Viva experiências gastronômicas <br /> no conforto da sua casa</Title>
         </HeaderLogo>
-        <HeaderTitle>
-            <h2>Viva experiências gastronômicas <br /> no conforto da sua casa</h2>
-        </HeaderTitle>
     </>
 )
 
