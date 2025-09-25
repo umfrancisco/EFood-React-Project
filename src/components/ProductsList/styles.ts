@@ -4,6 +4,7 @@ export const Container = styled.section`
     margin: 0 auto;
     width: 70%;
     margin-top: 64px;
+    margin-bottom: 64px;
 `
 
 export const List = styled.ul`

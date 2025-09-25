@@ -3,6 +3,7 @@ import ProductsList from "../../components/ProductsList";
 import type ProductModel from "../../models/ProductModel";
 import sushi from "../../assets/images/sushi.png";
 import macarrao from "../../assets/images/macarrao.png";
+import Footer from "../../components/Footer";
 
 const list: ProductModel = [
     {
@@ -59,6 +60,7 @@ const Home = () => (
     <>
         <Header />
         <ProductsList prods={list}/>
+        <Footer />
     </>
 )
 
