@@ -1,7 +1,8 @@
+import type { JSX } from "react";
 import { TagContainer } from "./styles";
 
 type Props = {
-    children: string
+    children: JSX.Element
 }
 
 const TagB = ({ children }: Props) => (

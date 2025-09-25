@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Tag from "../Tag";
+import TagB from "../TagB";
 import { Border, Card, Categories, Img, Text, Title } from "./styles";
 
 type Props = {
@@ -19,9 +20,9 @@ const Product = ({ categories, image, title, desc, link }: Props) => (
         <Border>
             <Title>{title}</Title>
             <Text>{desc}</Text>
-            <Tag>
+            <TagB>
                 <Link to={link}>Saiba mais</Link>
-            </Tag>
+            </TagB>
         </Border>
     </Card>
 )
