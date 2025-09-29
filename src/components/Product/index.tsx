@@ -7,18 +7,22 @@ type Props = {
     categories: string[],
     image: string,
     title: string,
+    review: number,
     desc: string,
     link: string
 }
 
-const Product = ({ categories, image, title, desc, link }: Props) => (
+const Product = ({ categories, image, title, review, desc, link }: Props) => (
     <Card>
         <Img src={image} alt={title} />
         <Categories>
             {categories.map(category => <Tag key={category}>{category}</Tag>)}
         </Categories>
         <Border>
-            <Title>{title}</Title>
+            <div className="title-review">
+                <Title>{title}</Title>
+                <span>{review}</span>
+            </div>
             <Text>{desc}</Text>
             <TagB>
                 <Link to={link}>Saiba mais</Link>

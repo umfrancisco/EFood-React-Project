@@ -13,8 +13,9 @@ const ProductsList = ({ prods }: Props) => (
                 <Product 
                     key={prod.id} 
                     categories={prod.categories} 
-                    image={prod.image} 
-                    title={prod.title} 
+                    image={prod.image}
+                    title={prod.title}
+                    review={prod.review} 
                     desc={prod.desc} 
                     link={prod.link}
                 />

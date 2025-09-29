@@ -40,4 +40,15 @@ export const Categories = styled.div`
 export const Border = styled.div`
     border: 1px solid ${cor.vermelho};
     border-top: none;
+
+    .title-review {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 16px;
+    }
+
+    .star {
+        
+    }
 `
