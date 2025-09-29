@@ -1,34 +1,32 @@
-import { Link } from "react-router-dom";
-import Tag from "../Tag";
-import TagB from "../TagB";
-import { Border, Card, Categories, Img, Text, Title } from "./styles";
+import { Border, Card, Categories, Img, Tag, Text, Title } from "./styles";
+import type { ProductModel } from "../../pages/Home";
 
-type Props = {
-    categories: string[],
-    image: string,
-    title: string,
-    review: number,
-    desc: string,
-    link: string
+const Product = ({ titulo, destacado, tipo, avaliacao, descricao, capa }: ProductModel) => {
+
+    const tagDestacado = "Destaque";
+
+    function getDestaque() {
+        if (destacado == true) {
+            return <Tag>{tagDestacado}</Tag>;
+        }
+    }
+
+    return (
+        <Card>
+            <Img src={capa} alt={titulo} />
+            <Categories>
+                <Tag>{tipo}</Tag>
+                {getDestaque()}
+            </Categories>
+            <Border>
+                <div className="title-review">
+                    <Title>{titulo}</Title>
+                    <span>{avaliacao}</span>
+                </div>
+                <Text>{descricao}</Text>
+            </Border>
+        </Card>
+    )
 }
-
-const Product = ({ categories, image, title, review, desc, link }: Props) => (
-    <Card>
-        <Img src={image} alt={title} />
-        <Categories>
-            {categories.map(category => <Tag key={category}>{category}</Tag>)}
-        </Categories>
-        <Border>
-            <div className="title-review">
-                <Title>{title}</Title>
-                <span>{review}</span>
-            </div>
-            <Text>{desc}</Text>
-            <TagB>
-                <Link to={link}>Saiba mais</Link>
-            </TagB>
-        </Border>
-    </Card>
-)
 
 export default Product;

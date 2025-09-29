@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { cor } from "../../styles";
-import { TagContainer } from "../Tag/styles";
 
 export const Card = styled.div`
     background-color: ${cor.rosa};
@@ -8,10 +7,6 @@ export const Card = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-
-    ${TagContainer} {
-        margin: 16px 8px;
-    }
 `
 
 export const Img = styled.img`
@@ -23,6 +18,15 @@ export const Img = styled.img`
 export const Title = styled.h3`
     margin: 8px;
     font-size: 18px;
+`
+
+export const Tag = styled.span`
+    background-color: #E66767;
+    color: #fff;
+    font-size: 14px;
+    padding: 4px 6px;
+    display: inline-block;
+    margin-left: 8px;
 `
 
 export const Text = styled.p`
