@@ -19,20 +19,22 @@ const mock: FoodItems[] = [
     {
         id: 2,
         imgUrl: pizza,
-        title: "Pizza Marguerita",
-        description: "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!"
+        title: "Pizza Portuguesa",
+        description: "A clássica Portuguesa: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!"
     },
     {
         id: 3,
         imgUrl: pizza,
-        title: "Pizza Marguerita",
-        description: "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!"
+        title: "Pizza Calabresa",
+        description: "A clássica Calabresa: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!"
     }
 ]
 
 const Food = () => {
 
     const [modalAtiva, setModalAtiva] = useState(false);
+    const [modalTitle, setModalTitle] = useState('');
+    const [modalDescription, setModalDescription] = useState('');
 
     return (
         <>
@@ -43,11 +45,12 @@ const Food = () => {
                     </div>
                     <div className='desc'>
                         <CloseBtn onClick={() => setModalAtiva(false)}>x</CloseBtn>
-                        <Title>Pizza Marguerita</Title>
+                        <Title>{modalTitle}</Title>
                         <Text>
-                            A pizza Margherita é uma pizza clássica da culinária italiana, reconhecida por sua simplicidade e sabor inigualável. Ela é feita com uma base de massa fina e crocante, coberta com molho de tomate fresco, queijo mussarela de alta qualidade, manjericão fresco e azeite de oliva extra-virgem. A combinação de sabores é perfeita, com o molho de tomate suculento e ligeiramente ácido, o queijo derretido e cremoso e as folhas de manjericão frescas, que adicionam um toque de sabor herbáceo. É uma pizza simples, mas deliciosa, que agrada a todos os paladares e é uma ótima opção para qualquer ocasião.
-                            <br/>
-                            <br/>
+                            {modalDescription}
+                        </Text>
+                        <div></div>
+                        <Text>
                             Serve: de 2 a 3 pessoas
                         </Text>
                         <Btn>Adicionar ao carrinho - R$ 60,90</Btn>
@@ -57,7 +60,11 @@ const Food = () => {
             <List>
                 {mock.map((food) => (
                     <Card key={food.id}>
-                        <Img src={food.imgUrl} onClick={() => setModalAtiva(true)}/>
+                        <Img src={food.imgUrl} onClick={() => {
+                            setModalAtiva(true)
+                            setModalTitle(food.title)
+                            setModalDescription(food.description)
+                        }}/>
                         <Title>{food.title}</Title>
                         <Text>{food.description}</Text>
                         <Btn>Adicionar ao carrinho</Btn>
